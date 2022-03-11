@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery.js"></script>
+        
+        <title> Solar </title>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="appName">
+                <p id="solarApp"> Solar </p>
+                
+                <p>"Reach for the stars!"</p>
+            </div>
+            <div class="leftSide" id="specialBackgroundHomePage">
+                <div class="navBar">
+                    <a href="home.html">Home</a>
+                    <a href="flashcardCreation.html">Create new Flashcards</a>
+                    <a href="userSets.html">Flashcard Sets</a>
+                    
+                    
+                </div>
+                
+                <div class="leftMainContent" >
+                    <div class="mainContentContainer">
+                        <h1> Welcome to Solar! </h1>
+                        <div class="flexboxContainer">
+                            
+                            <div class="column1">
+                                <h3> Who are we? </h3>
+                                <p> We are Solar, A group of three college students who want to give back <br>
+                                to other college students. We have developed Solar as a flash card application <br>
+                                to help other students study. Our motto is "Reach for the stars!" </p>
+                            </div>
+                            <div class="column2">
+                                <h3> What is our goal?</h3>
+                                <p> Our goal at Solar is to help other students, regardless of what level of <br>
+                                education they are in, to study efficiently and quickly. Using flashcards have <br>
+                                been scientifically shown to increase one's memory!</p>
+                            </div>
+                            <div class="column3">
+                                <h3> Get Started! </h3>
+                                <p> To get started with Solar, begin by looking near the top of the page. <br>
+                                    There are a few buttons where you are able to create new flashcards, <br>
+                                    create a new flashcard Set, and even edit some basic account info!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="displayUser">
+                    <div class="userInfo">
+                        <h3 id="displayUserName"></h3>
+                        <br>
+                        <div class="fixBioLength">
+                            <p id="userBio"></p>
+                        </div>
+                        <div class="bottomRight"> 
+                            <button id="editInfo" onclick="redirectToUser();" class="editUserInfo" type="button"> Edit Account </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="searchSets">
+                    <label id="searchUsersLbl" for="searchUsers"> Search Users: </label>
+                    <br><textarea id="searchUsers"></textarea>
+                    <br><button id="searchUsersBtn" onclick="searchUsers()"> Search </button>
+                </div>
+                <div class="displaySets">
+                
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="code.js"></script>
+    <script>
+        document.getElementById("displayUserName").textContent += sessionStorage.getItem('user');
+        fetchUserBio('userBio');
+        // RightSideDisplaySetsForUser()
+    </script>
+</html>

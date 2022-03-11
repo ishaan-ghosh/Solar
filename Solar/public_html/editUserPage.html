@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Solar </title>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="appName">
+                <p id="solarApp"> Solar </p>
+                
+                <p>"Reach for the stars!"</p>
+            </div>
+            <div class="leftSide" id="specialBackgroundHomePage">
+                <div class="navBar">
+                    <a href="home.html">Home</a>
+                    <a href="flashcardCreation.html">Create new Flashcards</a>
+                    <a href="userSets.html">Flashcard Sets</a>
+                    
+                    
+                </div>
+                
+                <div class="leftMainContent" >
+                    <div class="mainContentContainer">
+                        <h1 id="userInfoH1"></h1>
+                    </div>
+                    <div class="UserInformation">
+                        <ul>
+                            <li id="userName">Username: <br></li>
+                            <br>
+                            <li id="userBioInformation">
+                                <label for="userBioInputArea" id="bioLabel"> User Bio: </label> <!-- was onclick="fetchUserBio()"? -->
+                                <br>
+                                <textarea id="userBioInputArea" maxlength="100"></textarea>
+                                <br> 
+                                <button id="saveUserBio" class="userBio" onclick="updateUserBio();" type="button"> Save Bio </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="displayUser">
+                    <div class="userInfo">
+                        <h3 id="displayUserName"></h3>
+                        <br>
+                        <div class="fixBioLength">
+                            <p id="userBio"></p>
+                        </div>
+                        <div class="bottomRight"> 
+                            <button id="editInfo" onclick="redirectToUser();" class="editUserInfo" type="button"> Edit Account </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="searchSets">
+                    <label id="searchUsersLbl" for="searchUsers"> Search Users: </label>
+                    <br><textarea id="searchUsers"></textarea>
+                    <br><button id="searchUsersBtn" onclick="searchUsers()"> Search </button>
+                </div>
+                <div class="displaySets">
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="code.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() { // executes when HTML is ready
+            fetchUserBio('userBio');
+            var userH1 = document.getElementById("userInfoH1");
+            var userName = document.getElementById('userName');
+            userName.textContent += sessionStorage.getItem('user')
+            userH1.textContent += sessionStorage.getItem('user') + "'s Account Information";
+            document.getElementById("displayUserName").textContent += sessionStorage.getItem('user');
+            // RightSideDisplaySetsForUser()
+            
+        })
+    </script>
+</html>

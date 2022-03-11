@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery.js"></script>
+        <title> Solar </title>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="appName">
+                <p id="solarApp"> Solar </p>
+                
+                <p>"Reach for the stars!"</p>
+            </div>
+            <div class="leftSide" id="specialBackgroundHomePage">
+                <div class="navBar">
+                    <a href="home.html">Home</a>
+                    <a href="flashcardCreation.html">Create new Flashcards</a>
+                    <a href="userSets.html">Flashcard Sets</a>
+                    
+                    
+                </div>
+                
+                <div class="leftMainContent" >
+                    <div class="mainContentContainer">
+                        <h2> All Sets </h2>
+                        <div class="SetContainer">
+                            <div class="setLeftSideCreation">
+                                <button id="addSetToLeft" class="addSetLeftSide" onclick="toggleSetCreation();" type="button"> Create a Set </button>
+                                <button id="delSetToLeft" class="delSetLeftSide" onclick="toggleDelSet();" type="button"> Delete a Set </button>
+
+                                <div class="newSetContainer" id="hidden">
+                                    <h2> Create Set </h2>
+                                    <label for="name">Set Name </label>
+                                    <textarea id="name"></textarea>
+                                    <br>
+                                    <label for="description">Description </label>
+                                    <textarea id="description"></textarea>
+                                    <br>
+                                    <div>
+                                        <br><br><br><br>
+                                        <button onclick="hideForm('hidden');">Close</button>
+                                        <button onclick="createNewSet();">Save</button> <!--- IMPLEMENT CREATE SET FUNCTION-->
+                                    </div>
+                                </div>
+                                <br><br><br><br>
+                                <div class="deleteForm" id="hidden2">
+                                    <h2> Delete a Set </h2>
+                                    <br>
+                                    <label for="deleteSets"> Choose a Set to delete </label>
+                                    <select id="deleteSets" onload="getUserSetsDropdown();"> <!--- include the dropdown functionality -->
+                                        
+                                    </select>
+                                    <div>
+                                        <button onclick="hideForm('hidden2');"> Close </button>
+                                        <button onclick="deleteSet();"> Delete </button> <!--- IMPLEMENT DELETE SET FUNCTION-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setRightSideDisplay"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="displayUser">
+                    <h3 id="displayUserName"></h3>
+                    <br>
+                    <div class="fixBioLength">
+                        <p id="userBio"></p>
+                    </div>
+                    <div class="bottomRight"> 
+                        <button id="editInfo" onclick="redirectToUser();" class="editUserInfo" type="button"> Edit Account </button>
+                    </div>
+                </div>
+                <div class="searchSets">
+                    <label id="searchUsersLbl" for="searchUsers"> Search Users: </label>
+                    <br><textarea id="searchUsers"></textarea>
+                    <br><button id="searchUsersBtn" onclick="searchUsers()"> Search </button>
+                </div>
+                <div class="displaySets">
+                    <!-- <label id="searchUsersLbl" for="searchUsers"> Search Users: </label>
+                    <br><textarea id="searchUsers"></textarea>
+                    <br><button id="searchUsersBtn" onclick="searchUsers()"> Search </button> -->
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="code.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            document.getElementById("hidden2").style.display = "none";
+            document.getElementById("hidden").style.display = "none";
+            document.getElementById("displayUserName").textContent += sessionStorage.getItem('user');
+            fetchUserBio('userBio');
+            getUserSetsDropdown('deleteSets');
+            getUserSetsDisplaySets();
+            // getUserSetsDisplaySets().then(()=>collapsibleSets());
+            // RightSideDisplaySetsForUser();
+            // collapsibleSets();
+        })
+    </script>
+</html>

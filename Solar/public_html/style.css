@@ -1,0 +1,385 @@
+.navBar {
+    background-color: rgb(114, 109, 168);
+    overflow:hidden;
+    border-bottom: solid black;
+}
+.appName {
+    background-color: black;
+    background-image: url("https://pbs.twimg.com/media/CikwGihWUAErsT4.jpg");
+    background-repeat: no-repeat;
+    background-position:fixed;
+    background-position: bottom -80px right;
+    overflow:hidden;
+    color: rgb(255, 255, 255);
+    border-bottom: solid black;
+    text-align: center;
+    padding: 1% 0;
+}
+#solarApp {
+    font-size: 55px;
+    font-family: sans-serif;
+    color: rgb(155, 174, 242);
+    text-decoration: none;
+}
+
+.appName p{
+    color: rgb(155, 174, 242);
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 50%;
+    text-decoration: underline;
+}
+
+.navBar a { 
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar a:hover { 
+    background-color: #ddd;
+    color: white;
+}
+
+.displayUser {
+    height: 10vh;
+    background-color: rgb(132, 128, 179);
+    border-left: solid black;
+    position: relative;
+    padding: 1%;
+    color: white;
+    
+}
+#displayUserName {
+    font-size: 30px;
+}
+.fixBioLength {
+    position: inherit;
+    width: 75%;
+    overflow-wrap: break-word;
+}
+.leftSide {
+    width: 75%;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    float: left;
+}
+.rightSide {
+    position: absolute;
+    top: 50;
+    right: 0;
+    height: 100%;
+    width: 25%;
+}
+.displaySets { 
+    border-style: solid;
+    height: 82.75%;  
+    overflow-y: auto;
+    background-color: lightgray; /* was whitesmoke, rgb(231, 229, 229) */
+}
+.flashSets { 
+    border-top: solid;
+    border-bottom: solid;
+    background-color:rgb(231, 229, 229);
+    height: 20vh;
+    text-align: center;
+    padding: 20px;
+}
+.flashCards { 
+    border-top: solid;
+    border-bottom: solid;
+    background-color:rgb(231, 229, 229);
+    height: 20vh;
+    text-align: center;
+}
+.newFlashCardContainer { 
+    position: absolute;
+    height: 300px;
+    top: 50%;
+    left: 45%;
+    width: 400px;
+    padding: 2%;
+    margin-top: 10%;
+    border-radius: 5%;
+    margin: -15% 0 0 -10%;
+    background-color:whitesmoke;
+    box-shadow: 0 2px 4px 0 black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.newFlashCardContainer textarea {
+    width: 100%;
+    border-radius: 1%;
+    border: 1px solid lightgray;
+    resize: none;
+    height: 50px;
+    font-size: 20px;
+}
+.newFlashCardContainer h2 {
+    text-align: center;
+}
+.newFlashCardContainer button {
+    width: fit-content;
+}
+
+.leftMainContent {
+    width: 100%;
+    margin: auto;
+    margin-top: 2%;
+}
+.leftMainContent h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 1%;
+    
+}
+.flexboxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3%;
+    height: 70vh;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    
+}
+.column1, .column2, .column3 {
+    border-radius: 1em;
+    box-shadow: 0 2px 4px 0 black;
+    font-size: 30px;
+    background-color: rgb(125, 140, 196);
+    text-align: center;
+    color: whitesmoke;
+    overflow: auto;
+    
+}
+.column1 h3, .column2 h3, .column3 h3 {
+    font-style: italic;
+}
+#specialBackgroundHomePage {
+    background-color: lightgray;
+}
+
+.editUserInfo {
+    border: 0;
+    border-radius: .5em;
+    line-height: 2.5;
+    padding: 0 10px;
+    font-size: .75rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+.editUserInfo:hover {
+    background-color: rgb(35, 26, 35);
+}
+.bottomRight {
+    position: absolute;
+    bottom: 5%;
+    right: 1%;
+}
+.mainContentContainer h2{
+    text-align: center;
+    font-size: 50px;
+}
+#userBioInputArea {
+    width: 20%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    resize: none;
+    height: 50px;
+    font-size: 20px;
+}
+.UserInformation {
+    width: 95%;
+    font-size: 25px;
+    position: relative;
+    padding: 5px; /* try to adjust padding on editUserPage.html */
+}
+.UserInformation ul {
+    margin-left: 5px;
+}
+#saveUserBio {
+    position: absolute;
+    left: 25px;
+    right: 5px;
+}
+
+.addSetLeftSide, .delSetLeftSide { 
+    border: 0;
+    border-radius: 5px;
+    line-height: 2.5;
+    padding: 0 10px;
+    font-size: .75rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+    margin: 15px 25px 0 60px;
+    font-size: 25px;
+    width: 200px;
+    height: 100px;
+}
+.addSetLeftSide:hover, .delSetLeftSide:hover {
+    background-color: rgb(35, 26, 35);
+}
+.SetContainer {
+    display: flex;
+}
+.setLeftSideCreation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    width: 50%;
+    padding: 5px;
+    border-top: solid black;
+    position: relative;
+}
+.setLeftSideCreation .setRightSideDisplay {
+    height: 100vh;
+}
+.setRightSideDisplay {
+    border-top: solid black;
+    width: 50%;
+}
+.addSetToLeft, .delSetToLeft {
+    margin: 15px 25px 0 15px;
+    font-size: 25px;
+    width: 200px;
+    height: 100px;
+}
+.newSetContainer h2{
+    font-size: 20px;
+}
+
+.newSetContainer { 
+    position: inherit;
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color:whitesmoke;
+    box-shadow: 0 2px 4px 0 black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.newSetContainer button {
+    width: fit-content;
+}
+
+.newSetContainer textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    resize: none;
+    height: 50px;
+    font-size: 20px;
+}
+.deleteForm {
+    width: 400px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color:whitesmoke;
+    box-shadow: 0 2px 4px 0 black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.deleteForm button {
+    width: fit-content;
+}
+.deleteForm h2 {
+    font-size: 25px;
+}
+
+/* testing collapsible css*/
+.collapsible { 
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+}
+.active, .collapsible:hover {
+    background-color: #FAFAFA;
+}
+.collapsibleContent { 
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;;
+    
+}
+
+.collapsible:after {
+    content: '\02795'; 
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; 
+  } 
+ 
+
+
+.hideOnClick {
+    display: none;
+}
+
+.noSets {
+    font-size: 25px;
+    font-style: oblique;
+    color: rgba(0, 0, 0, 0.5);
+}
+.hiddenDefinition {
+    /* background-color: aqua;
+    color:rgb(114, 109, 168); */
+    background-color: rgb(132, 128, 179);
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding: 5%;
+    /* margin-left: 13%; */
+    display: none;
+
+    position: inherit;
+    overflow-wrap: break-word;
+}
+
+.termCard {
+    background-color: rgb(114, 109, 168);
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding: 5%;
+    /* margin-left: 13%; */
+
+    position: inherit;
+    overflow-wrap: break-word; 
+    /* ^, works but changes the box height on overflow */
+    /* overflow-x: auto;*/ /* works but has a scrollbar */
+    /* 3rd option: auto-resize text to fit fixed div - overcomplicated */
+}
+.searchSets {
+    background-color: rgb(132, 128, 179);
+    border-left: solid black;
+    border-top: solid black;
+}

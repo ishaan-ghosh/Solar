@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Solar </title>
+    </head>
+    <body>
+        <div id='newAccountSideBar'>
+            <label for="newUser">Username </label>
+            <input type="text" name="newUser" id="newUser">
+            <br><br>
+            <label for="newPassword">Password </label>
+            <input type="password" name="newPassword" id="newPassword">
+            <br><br>
+            <input type="button" onclick="createNewUser();" value=" Create new Account! ">
+            
+        </div>
+        <div class="mainContentLogin">
+            <h1> Solar </h1>
+            <p>"reach for the stars!"</p>
+            <div class="credentials">
+
+                <label for="loginUser">Username </label>
+                <input type="text" name="loginUser" id="loginUser">
+                <br><br>
+                <label for="loginPassword">Password </label>
+                <input type="password" name="loginPassword" id="loginPassword">
+                <br><br>
+                <input type="button" value=" Login " onclick="userLogin();"> <!-- Add login functionality which redirects to main page-->
+                <br><br>
+                <a href="#" id="openTheSideBar" >Create an account!</a>
+            </div>
+        </div>
+    </body>
+    <script src="code.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const openButton = document.getElementById("openTheSideBar");
+            const sidebar = document.getElementById("newAccountSideBar");
+            openButton.addEventListener("click", e => {
+            e.preventDefault();
+            sidebar.classList.toggle("openSideBar");
+            });
+        });
+    </script>
+</html>

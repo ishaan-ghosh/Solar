@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Solar </title>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="appName">
+                <p id="solarApp"> Solar </p>
+                
+                <p>"Reach for the stars!"</p>
+            </div>
+            <div class="leftSide" id="specialBackgroundHomePage">
+                <div class="navBar">
+                    <a href="home.html">Home</a>
+                    <a href="flashcardCreation.html">Create new Flashcards</a>
+                    <a href="userSets.html">Flashcard Sets</a>
+                    
+                </div>
+                
+                <div class="leftMainContent">
+                    <h1> Create a new flashcard </h1>
+                    <div class="newFlashCardContainer">
+                        <h2> Create Flashcard </h2>
+                        <label for="term">Term </label>
+                        <textarea id="term"></textarea>
+                        <br>
+                        <label for="answer">Answer </label>
+                        <textarea id="answer"></textarea>
+                        <br>
+                        <label for="set">Choose a set: </label>
+                        <select id="flashSetsOptions">
+                        </select>
+                        <div>
+                            <button>Close</button>
+                            <button onclick="createFlashCard();">Save</button> <!--ADD FUNCTIONALITY-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="displayUser">
+                    <h3 id="displayUserName"></h3>
+                    <br>
+                    <div class="fixBioLength">
+                        <p id="userBio"></p>
+                    </div>
+                    <div class="bottomRight"> 
+                        <button id="editInfo" onclick="redirectToUser();" class="editUserInfo" type="button"> Edit Account </button>
+                    </div>
+                </div>
+                <div class="searchSets">
+                    <label id="searchUsersLbl" for="searchUsers"> Search Users: </label>
+                    <br><textarea id="searchUsers"></textarea>
+                    <br><button id="searchUsersBtn" onclick="searchUsers()"> Search </button>
+                </div>
+                <div class="displaySets">
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="code.js"></script>
+    <script>
+        document.getElementById("displayUserName").textContent += sessionStorage.getItem('user');
+        fetchUserBio('userBio');
+        getUserSetsDropdown('flashSetsOptions');
+        // RightSideDisplaySetsForUser();
+    </script>
+</html>
